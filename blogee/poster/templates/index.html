@@ -1,0 +1,19 @@
+{% if posts %}
+	{% for post in posts%}
+		<p>Author : {{ post.author}}</p>
+		<p>Author : {{ post.article}}</p>
+		<hr>
+	{% endfor %}
+{% else %}
+	<p> No post is found</p>
+{% endif %}
+
+
+<form action="/poster/news/" method="post">
+{% csrf_token %}
+<input type = "text" name ="author">
+<input type = "text" name ="article">
+<input type="submit" value="Submit" />
+</form>
+
+<a href="/poster/new">Go to</a>
